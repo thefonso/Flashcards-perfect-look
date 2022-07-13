@@ -29,7 +29,7 @@ export default function CreateDeck() {
     })
   }
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit (event) {
     event.preventDefault()
     const abortController = new AbortController()
     const response = await createDeck({ ...formData }, abortController.signal)

@@ -12,6 +12,7 @@ coverage/
 build/
 
 # misc
+.log
 .eslintcache
 .DS_Store
 .env
