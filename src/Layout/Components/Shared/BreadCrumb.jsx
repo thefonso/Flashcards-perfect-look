@@ -5,7 +5,7 @@ export default function BreadCrumb({ deckId, name, screen }) {
     <nav aria-label="breadcrumb">
       <ol className="breadcrumb">
         <li className="breadcrumb-item">
-          <Link to="/">Home</Link>
+          <Link to="/">Decks</Link>
         </li>
         {deckId ? (
           <li className="breadcrumb-item">
