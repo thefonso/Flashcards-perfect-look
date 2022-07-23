@@ -54,18 +54,18 @@ export default function Study() {
       ) : (
         <>
           <BreadCrumb deckId={deckId} name={deck.name} screen={'Study'} />
-          <div className="mb-4">
+          <div className="flex-container">
+            <div className="study-box col-lg">
             <h2>Study: {deck.name}</h2>
-            <div>
               {cards.length === 0 ? (
                 <NoCards cards={cards} deck={deck} />
               ) : cards.length > 2 ? (
                 <AllCards
                   cards={cards}
                   cardNumber={cardNumber}
+                  setCardNumber={setCardNumber}
                   front={front}
                   setFront={setFront}
-                  setCardNumber={setCardNumber}
                   history={history}
                 />
               ) : (

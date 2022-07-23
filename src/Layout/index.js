@@ -12,7 +12,7 @@ import EditCard from "./Components/Card/EditCard";
 
 function Layout() {
   return (
-    <React.Fragment>
+    <div>
       <Header />
       <div className="container">
         {/* TODO: Implement the screen starting here */}
@@ -50,7 +50,7 @@ function Layout() {
           </Route>
         </Switch>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

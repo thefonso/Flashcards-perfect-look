@@ -17,9 +17,9 @@ export default function HomeScreen({ decks, handleDelete }) {
       top: "0px"
     }
   ]
-  const Child = ({ mystyle, id, name, length, description }) => {
+  const Child = ({mystyle, id, name, length, description }) => {
     return (
-      <div className="flashcard card" style={mystyle}>
+      <div className="flashcard card" key={id} style={mystyle}>
         <div className="card-header bg-dark text-light">
           <h3 className="card-title">Hi Kosh{name}</h3>
           <h5 className="card-subtitle">{length} cards</h5>
@@ -59,16 +59,16 @@ export default function HomeScreen({ decks, handleDelete }) {
         Create Deck
       </Link>
       <div className="d-flex flex-lg-row flex-column flex-wrap justify-content-lg-around" style={{ maxWidth: '100%' }}>
-        {decks.map((deck) => {
+        {decks.map((deck,index) => {
           return (
-            <div className="mb-4 mx-2 bg-light p-0 col-lg-5" key={deck.id}>
+            <div className="mb-4 mx-2 p-0 col-lg-5" key={deck.id}>
               {/* TODO: refactor out this repeated element */}
               <div className="deck">
                 {/* TODO: loop for three? */}
                 {(()=>{
                   let posts = []
                   for(let i = 0; i <= myStyle.length; i++){
-                      posts.push(<Child mystyle={myStyle[i]} id={deck.id} name={deck.name} description={deck.description} length={deck.cards.length} />)
+                    posts.push(<Child mystyle={myStyle[i]} key={i} id={deck.id} name={deck.name} description={deck.description} length={deck.cards.length} />)
                   }
                   return posts;
                 })()}

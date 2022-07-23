@@ -1,0 +1,172 @@
+
+#pen-title,
+#pen-description {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	z-index: 0;
+	color: #484848;
+}
+
+#pen-title {
+	transform: translate(-50%, -125%);
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+#pen-description {
+	transform: translate(-50%, 125%);
+	font-size: 1.125rem;
+}
+
+
+// Hide cards' checkboxes
+
+.card-checkbox { display: none; }
+
+
+// Cards
+
+.studycard {
+	// display: flex;
+	$width: 650px;
+	$height: $width * 0.67;
+	box-sizing: border-box;
+	position: fixed;
+	top: 90%; //peek from screen bottom
+	// left: 50%;
+	width: $width;
+	height: $height;
+	// margin-left: -$width / 2;
+	padding: 1rem;
+	transform: rotate(-2deg);
+	z-index: 0;
+	background-color: #ddd;
+	color: #181818;
+	box-shadow: 0 0 16px rgba(0,0,0,.25);
+	transition: all .75s;
+	//CARD stuff
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1pxsolidrgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+
+// Card deck
+
+%first-card-in-deck {
+	transform: rotate(2deg);
+	z-index: 2;
+	background-color: #fff;
+}
+
+%second-card-in-deck {
+	z-index: 1;
+	transform: rotate(0);
+	background-color: #eee;
+}
+
+.card-checkbox:first-of-type + .studycard {
+	@extend %first-card-in-deck;
+}
+
+.card-checkbox:nth-of-type(2) + .studycard {
+	@extend %second-card-in-deck;
+}
+
+
+// Active card
+
+.card-checkbox:checked + .studycard {
+	margin-top: -10%;
+	//position: absolute;
+	transform: rotate(0);
+	top: 55%;
+	background-color: #fff;
+}
+
+.study-box{
+	position: absolute;
+	height: 100%;
+}
+// Modify deck when certain cards are active so that the deck looks always the same (except if there isn't enough cards)
+
+.card-checkbox:first-of-type:checked ~ .card-checkbox:nth-of-type(2) + .studycard {
+	@extend %first-card-in-deck;
+}
+
+.card-checkbox:first-of-type:checked ~ .card-checkbox:nth-of-type(3) + .studycard {
+	@extend %second-card-in-deck;
+}
+
+.card-checkbox:nth-of-type(2):checked ~ .card-checkbox:nth-of-type(3) + .studycard {
+	@extend %second-card-in-deck;
+}
+
+
+// Navigation
+
+#nav {
+	display: flex;
+	flex-wrap: wrap;
+	// justify-content: center;
+	padding-left: 0;
+	list-style: none;
+	font-size: .95rem;
+	color: #686868;
+
+	li:not(.lowercase) { text-transform: uppercase; }
+
+	label {
+		display: block;
+		// padding: .75rem 1.25rem;
+		padding-right: 1.25rem;
+		cursor: pointer;
+		transition: color .25s;
+
+		&:hover {
+			color: #007bff;
+			text-decoration: underline;
+		}
+	}
+}
+
+.flex-container{
+	display: flex;
+}
+
+
+// Media query for mobile
+@media (max-width: 390px){
+	h1.display-4{
+		font-size: 2.5rem;
+	}
+    #nav label:hover {
+		color: #007bff;
+		text-decoration: underline;
+	}
+	h2{
+		font-size: 1.75rem;
+	}
+	.container .col-lg-5{
+		padding-right:0%;
+		padding-left: 0%;
+	}
+	.studycard{
+		$width: 350px;
+		width: $width;
+		height: 100%;
+		left: 50%;
+	    margin-left: -$width / 2;
+	}
+	.card-checkbox:checked + .studycard {
+		margin-top: 0%;
+		transform: rotate(0);
+		top: 45%;
+		background-color: #fff;
+	}
+}
