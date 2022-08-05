@@ -2,8 +2,25 @@ import frontCard from '../../Images/frontCard.png'
 import backCard from '../../Images/backCard.png'
 import React from 'react'
 import './AllCards.scss'
+import {useEffect, useRef, createRef} from 'react'
 
 export default function AllCards({ cards, cardNumber, setCardNumber, front, setFront, history, }) {
+
+  const labelRef = useRef()
+
+  useEffect(()=>{
+     //run after component mounted
+    const timeoutId = setTimeout(()=> {
+     labelRef.current.click();//trigger click 1 seconds
+    }, 1000)
+
+    return () => clearTimeout(timeoutId)
+  },[])
+
+  const onClickLabel = (index) =>{
+    console.log("hiii");
+  }
+
 
   function flipCard() {
     if (front) {
@@ -27,10 +44,6 @@ export default function AllCards({ cards, cardNumber, setCardNumber, front, setF
     }
   }
 
-  function restartCard() {
-    setCardNumber(1)
-    setFront(true)
-  }
 
   function nextButton(cards, index) {
     if (front) {
@@ -47,13 +60,24 @@ export default function AllCards({ cards, cardNumber, setCardNumber, front, setF
     }
   }
 
+//TODO - flip only one card.... not all cards at same time
+  // onload....display FIRST card not last card
+
   return (
     <React.Fragment>
       {/* nav here? */}
       <ul id="nav">
-        <li className="lowercase"><label htmlFor="put-cards-down">(Restart)</label></li>
+        <li className="lowercase">
+          <label htmlFor="put-cards-down">(Restart)</label>
+        </li>
         {cards.map((card, index) =>
-          <li key={index}><label htmlFor={`toggle-card-${index + 1}`}>Card {index + 1}</label></li>
+          <li key={index}>
+            {(index == 0) ? (
+             <label id={`item-${index}`} ref={labelRef} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>Card {index + 1}</label>
+            ):(
+             <label id={`item-${index}`} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>Card {index + 1}</label>
+            )}
+          </li>
         )}
       </ul>
       {/* front-card */}
@@ -70,13 +94,6 @@ export default function AllCards({ cards, cardNumber, setCardNumber, front, setF
               <div className="card-body">
                 <div className="d-flex flex-row justify-content-between">
                   <div className="col-8">
-                    {/* Restart Button */}
-                    {/* <button */}
-                    {/*   className="btn btn-info mb-3" */}
-                    {/*   onClick={() => restartCard(cards, index)} */}
-                    {/* > */}
-                    {/*   Restart */}
-                    {/* </button> */}
                     <h5 className="card-title">
                       {`Card ${index + 1} of ${cards.length}`}
                     </h5>
@@ -85,7 +102,6 @@ export default function AllCards({ cards, cardNumber, setCardNumber, front, setF
                     <button className="btn btn-secondary mx-1" onClick={flipCard}>
                       Flip
                     </button>
-                    {nextButton(cards, index)}
                   </div>
                   <div className="col-4">
                     {

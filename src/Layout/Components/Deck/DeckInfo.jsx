@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function DeckInfo({ id, deck, handleDelete}) {
-    return (
-        <div className="deck-body">
-          <h2>Deck: </h2><h4 className="card-title">{deck.name}</h4>
-        <p className="card-text">{deck.description}</p>
+export default function DeckInfo({ id, deck, handleDelete }) {
+  return (    <div className="deck-body">
+      <h2>Deck: </h2><h4 className="card-title">{deck.name}</h4>
+      <p className="card-text">{deck.description}</p>
+      <div className="d-flex">
         <Link to={`/decks/${id}/edit`} className="btn btn-secondary mr-2">
           Edit Deck
         </Link>
@@ -20,11 +20,13 @@ export default function DeckInfo({ id, deck, handleDelete}) {
         </Link>
         <button
           type="button"
-          className="btn btn-danger "
+          className="btn btn-danger ml-auto mr-2"
           onClick={() => handleDelete(deck)}
         >
           Delete Deck
         </button>
+
       </div>
-    )
+    </div>
+  )
 }
