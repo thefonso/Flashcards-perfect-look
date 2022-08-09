@@ -1,6 +1,6 @@
 
-#pen-title,
-#pen-description {
+#title,
+#description {
 //	position: fixed;
 //	top: 40%;
 //	left: 50%;
@@ -8,13 +8,13 @@
 	color: #484848;
 }
 
-#pen-title {
+#title {
 	transform: translate(0%, -125%);
 	font-size: 2rem;
 	text-transform: uppercase;
 }
 
-#pen-description {
+#description {
 //	transform: translate(0%, 125%);
 	font-size: 1.125rem;
 }

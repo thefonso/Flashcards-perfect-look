@@ -12,7 +12,6 @@ export default function Study() {
   const [deck, setDeck] = useState({});
   const [cards, setCards] = useState([]);
   const [cardNumber, setCardNumber] = useState(1);
-  const [front, setFront] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const history = useHistory();
@@ -64,8 +63,6 @@ export default function Study() {
                   cards={cards}
                   cardNumber={cardNumber}
                   setCardNumber={setCardNumber}
-                  front={front}
-                  setFront={setFront}
                   history={history}
                 />
               ) : (

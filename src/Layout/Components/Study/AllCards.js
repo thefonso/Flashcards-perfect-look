@@ -1,125 +1,118 @@
 import frontCard from '../../Images/frontCard.png'
 import backCard from '../../Images/backCard.png'
-import React from 'react'
 import './AllCards.scss'
-import {useEffect, useRef, createRef} from 'react'
+import OneCard from './OneCard'
+import { React, useState, useEffect, useRef, createRef } from 'react'
 
-export default function AllCards({ cards, cardNumber, setCardNumber, front, setFront, history, }) {
+
+
+export default function AllCards({ cards }) {
+  console.log("AllCards")
+  console.log(cards) // Array<{  }>;
+
+//  const [newCards, setnewCards] = useState(cards);
+  //const [front, setFront] = useState(true);
+  // TODO .push {checked: true} onto cards array?
+  //card.checked = true
 
   const labelRef = useRef()
 
-  useEffect(()=>{
-     //run after component mounted
-    const timeoutId = setTimeout(()=> {
-     labelRef.current.click();//trigger click 1 seconds
+  useEffect(() => {
+    cards.map((card) => {
+      console.log("card map thing")
+      card.checked = true
+    })
+
+    //run after component mounted
+    const timeoutId = setTimeout(() => {
+      labelRef.current.click();//trigger click 1 seconds
     }, 1000)
 
     return () => clearTimeout(timeoutId)
-  },[])
+  }, [])
 
-  const onClickLabel = (index) =>{
-    console.log("hiii");
+
+
+  function onClickLabel(index) {
+    // console.log("hiii"+index);
   }
 
-
-  function flipCard() {
-    if (front) {
-      setFront(false)
-    } else {
-      setFront(true)
-    }
-  }
-
-  function nextCard(index, total) {
-    if (index < total) {
-      setCardNumber(cardNumber + 1)
-      setFront(true)
-    } else {
-      if (window.confirm('Restart? Click cancel to return to the home page.')) {
-        setCardNumber(1)
-        setFront(true)
-      } else {
-        history.push('/')
-      }
-    }
-  }
+  //grab transformed cards array and make it a newCards state
+  const [newCards, setnewCards] = useState(cards);
 
 
-  function nextButton(cards, index) {
-    if (front) {
-      return null
-    } else {
-      return (
-        <button
-          className="btn btn-primary mx-1"
-          onClick={() => nextCard(index + 1, cards.length)}
-        >
-          Next
-        </button>
+  function flipCard(index) {
+    // TODO flip only the card with id 1
+    // setState of front
+    console.log("flipCard index: " + index)
+    //console.log("front "+front)
+    //console.log("card.front: "+card.front)
+    //console.log("card.back: "+card.back)
+    setnewCards((prevState) =>
+      prevState.map((newCard) =>
+        newCard.id === index ? { ...newCard, checked: !newCard.checked } : newCard
       )
-    }
+    );
+    // if (front) {
+    // setFront(false)
+    // } else {
+    // setFront(true)
+    // }
   }
 
-//TODO - flip only one card.... not all cards at same time
-  // onload....display FIRST card not last card
+
+  // TODO - flip only one card.... not all cards at same time
+  // TODO - Banner Top - fix responsiveness so words always  appear
+  // TODO - Center layout on iPad Mini
+  // TODO - Study Deck view - add thick boarder on "Back"
+  // TODO - New row for "Flip" button
+  // TODO - fullscreen Desktop study view layout needs fixin
 
   return (
-    <React.Fragment>
-      {/* nav here? */}
+    <>
+      {/* nav begins here */}
       <ul id="nav">
         <li className="lowercase">
           <label htmlFor="put-cards-down">(Restart)</label>
         </li>
-        {cards.map((card, index) =>
+        {newCards.map((newCard, index) =>
           <li key={index}>
-            {(index == 0) ? (
-             <label id={`item-${index}`} ref={labelRef} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>Card {index + 1}</label>
-            ):(
-             <label id={`item-${index}`} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>Card {index + 1}</label>
+            {(index == 1) ? (
+              <label id={`item-${index}`} ref={labelRef} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>
+                one Card {index + 1}
+              </label>
+            ) : (
+              <label id={`item-${index}`} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>
+                two Card {index + 1}
+              </label>
             )}
           </li>
         )}
       </ul>
       {/* front-card */}
-      <h1 id="pen-title"></h1>
-      <div id="pen-description">Click card number above to start</div>
+      <h1 id="title"></h1>
+      <div id="description">Click card number above to start</div>
 
       {/* deck-bottom? */}
 
-      {cards.map((card, index) =>
+      {newCards.map(({front, back, id, checked }) =>
         /* index === cardNumber - 1 ? ( */
-          <React.Fragment key={index}>
-            <input type="radio" name="cards" className="card-checkbox" id={`toggle-card-${index +1}`} />
-            <div className="studycard card" key={index}>
-              <div className="card-body">
-                <div className="d-flex flex-row justify-content-between">
-                  <div className="col-8">
-                    <h5 className="card-title">
-                      {`Card ${index + 1} of ${cards.length}`}
-                    </h5>
-                    <p className="card-text">{front ? card.front : card.back}</p>
-
-                    <button className="btn btn-secondary mx-1" onClick={flipCard}>
-                      Flip
-                    </button>
-                  </div>
-                  <div className="col-4">
-                    {
-                      <img
-                        src={front ? frontCard : backCard}
-                        className="img-fluid"
-                        alt="cards"
-                      ></img>
-                    }
-                  </div>
-                </div>
-              </div>
-            </div>
-          </React.Fragment>
+        // NOTE extract into child component?
+        <OneCard
+          cards={cards}
+          index={id}
+          checked={checked}
+          front={front}
+          back={back}
+          flipCard={flipCard}
+          key={id}
+          frontCard={frontCard}
+          backCard={backCard}
+        />
         /* ) : null, */
       )}
 
-      <input type="radio" name="cards" className="card-checkbox" id="put-cards-down"/>
-    </React.Fragment>
+      <input type="radio" name="cards" className="card-checkbox" id="put-cards-down" />
+    </>
   )
 }
