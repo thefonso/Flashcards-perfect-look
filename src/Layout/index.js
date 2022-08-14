@@ -9,10 +9,11 @@ import CreateDeck from "./Components/Deck/CreateDeck";
 import EditDeck from "./Components/Deck/EditDeck";
 import AddCard from "./Components/Card/AddCard";
 import EditCard from "./Components/Card/EditCard";
+import "./index.css"
 
 function Layout() {
   return (
-    <div>
+    <div id="root-container">
       <Header />
       <div className="container">
         {/* TODO: Implement the screen starting here */}

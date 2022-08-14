@@ -21,7 +21,7 @@ export default function HomeScreen({ decks, handleDelete }) {
     return (
       <div className="flashcard card" key={id} style={mystyle}>
         <div className="card-header bg-dark text-light">
-          <h3 className="card-title">Hi Kosh{name}</h3>
+          <h3 className="card-title">{name}</h3>
           <h5 className="card-subtitle">{length} cards</h5>
         </div>
         <div className="card-body d-flex flex-column justify-content-between">
@@ -40,18 +40,8 @@ export default function HomeScreen({ decks, handleDelete }) {
       </div>
     )
   }
-  // const fields = [];
-  // for (let i = 1; i <= 3; i++) {
-  //   if (i = 1){
-  //     fields.push(<Fields myStyle={myStyle} deck={deck} key={i} />)
-  //   }
-  //   if(i = 2){
-  //     fields.push(<Fields prop={myStyle2} deck={deck} key={i} />)
-  //   }
-  //   if(i = 3){
-  //      fields.push(<Fields prop={myStyle3} deck={deck} key={i} />)
-  //   }
-  // }
+  //   TODO make this a button sitting on a table
+
   return (
     <main className="container">
       <Link className="btn btn-lg btn-primary btn-block mb-4" to="/decks/new">

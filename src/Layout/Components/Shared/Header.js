@@ -1,15 +1,16 @@
 import React from 'react'
 import logo from '../../Images/logo.png'
+import './Header.css'
 
 function Header() {
   return (
-    <header className="container-fluid bg-dark py-4 mb-4">
-      <div className="text-white text-center">
-        <div>
-          <h1 className="display-4">
-            <img src={logo} alt="Responsive" style={{ maxWidth: '7%' }}></img>
-            Flashcard-o-matic
-          </h1>
+    <header className="flex-container">
+      <div id="parent" className="d-flex justify-content-center">
+        <div id="header-logo">
+          <img className="img-fluid" src={logo} alt="Card Deck Logo" ></img>
+        </div>
+        <div id="header-text">
+          <h1 className="title">Flashcards-O-Matic</h1>
           <p className="lead">Awesome Flashcards for Awesome People</p>
         </div>
       </div>
