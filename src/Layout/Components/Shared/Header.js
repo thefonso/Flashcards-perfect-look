@@ -11,7 +11,7 @@ function Header() {
         </div>
         <div id="header-text">
           <h1 className="title">Flashcards-O-Matic</h1>
-          <p className="lead">Awesome Flashcards for Awesome People</p>
+          <p className="lead">Awesome Cards for Awesome People</p>
         </div>
       </div>
     </header>

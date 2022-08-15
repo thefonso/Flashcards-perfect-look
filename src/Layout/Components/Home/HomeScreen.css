@@ -1,8 +1,36 @@
+/* mobile layout */
+#create-deck-button{
+    display: flex;
+    margin-bottom: 4vh;
+    width: 100%;
+    justify-content: center;
+}
+.round{
+    width: 100%;
+}
 
+/* TODO - mobile first */
+@media only screen and (min-width: 768px){
+    /* for desktop */
+#create-deck-button{
+    display: flex;
+    width:100%;
+    margin-bottom:4vh;
+    justify-content: center;
+    align-items: center;
+}
+.square{
+
+}
+.round{
+    width: 10% !important;
+    border-radius: 50%;
+    text-align: center;
+}
 .deck{
     display: flex;
     position: relative;
-    /* width: 400px; */
+    width: 400px;
     height: 500px;
     /*bottom:55%;
     right:22%;
@@ -32,5 +60,5 @@
     transition: 0.6s;
     font-size:18px;
     z-index:0;
-    /*   transform-origin: left top; */
+}
 }

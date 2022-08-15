@@ -44,14 +44,16 @@ export default function HomeScreen({ decks, handleDelete }) {
 
   return (
     <main className="container">
-      <Link className="btn btn-lg btn-primary btn-block mb-4" to="/decks/new">
-        <i className="bi bi-plus-lg mr-2"></i>
-        Create Deck
-      </Link>
-      <div className="d-flex flex-lg-row flex-column flex-wrap justify-content-lg-around" style={{ maxWidth: '100%' }}>
+      <div id="create-deck-button">
+        <Link className="round btn btn-lg btn-primary" to="/decks/new">
+        {/* <i className="bi bi-plus-lg mr-2"></i> */}
+        New Deck
+        </Link>
+      </div>
+      <div className="d-flex flex-lg-row flex-column flex-wrap justify-content-around" style={{ maxWidth: '100%' }}>
         {decks.map((deck,index) => {
           return (
-            <div className="mb-4 mx-2 p-0 col-lg-5" key={deck.id}>
+            <div className="mb-4 mx-auto p-0 col-lg-5" key={deck.id}>
               {/* TODO: refactor out this repeated element */}
               <div className="deck">
                 {/* TODO: loop for three? */}

@@ -1,10 +1,43 @@
+/* Mobile layout */
+header{
+    background: #343440;
+    margin-bottom: 4%;
+    height: 15vh;
+}
+header .title{
+    color: white;
+    font-size: 4vh;
+}
+header .lead{
+    text-align: center;
+    font-size: 2vh;
+    color: white;
+}
+#header-logo{
+    /* display: flex; */
+    /* align-items: stretch; */
+}
+#header-logo img{
+    max-width: 100%; /*responsive font value - view port width*/
+    max-height: 80%;
+}
+#header-text{
+    display: flex;
+    flex-direction: column;
+    text-align:center
+}
+.flex-container{
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px){
 header {
     background: #343440;
     margin-bottom: 4%;
     padding-left: 1%;
     padding-right: 1%;
     padding-bottom: 2%;
-    height: 40vh;
+    height: 20vh;
     position:relative
 }
 header .title{
@@ -33,4 +66,5 @@ header .lead{
 #header-text{
     display: flex;
     flex-direction: column;
+}
 }
