@@ -3,6 +3,7 @@ header{
     background: #343440;
     margin-bottom: 4%;
     height: 15vh;
+    position:relative;
 }
 header .title{
     color: white;
@@ -38,7 +39,7 @@ header {
     padding-right: 1%;
     padding-bottom: 2%;
     height: 20vh;
-    position:relative
+    position:relative;
 }
 header .title{
     color: white;
@@ -51,10 +52,6 @@ header .lead{
 }
 .flex-container{
     justify-content: center;
-}
-#parent{
-    /*TODO clean up comments*/
-    /* background-color: aqua; */
 }
 #header-logo{
     display: flex;

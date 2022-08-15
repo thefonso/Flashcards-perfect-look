@@ -1,15 +1,47 @@
 /* mobile layout */
+
 #create-deck-button{
     display: flex;
     margin-bottom: 4vh;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 .round{
     width: 100%;
 }
+.deck{
+    display: flex;
+    position: relative;
+    width: 87vw;
+    height: 100vw;
+    margin-bottom: 8%;
+    /*bottom:55%;
+    right:22%;
+    padding:10px;
+    transform:translateZ(0);*/
+}
+.flashcard {
+    width:350px;
+    position: absolute;
+    top:0%;
+    right:0%;
+    height:100%;
+    border-radius:8px;
+    margin-bottom:4px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5);
 
-/* TODO - mobile first */
+    border:1px solid #726A53;
+    background-color:#F8F5ED;
+    overflow:hidden;
+    padding:8px;
+    box-sizing:border-box;
+    transition: 0.6s;
+    font-size:18px;
+    z-index:0;
+}
+
+
 @media only screen and (min-width: 768px){
     /* for desktop */
 #create-deck-button{
@@ -32,15 +64,11 @@
     position: relative;
     width: 400px;
     height: 500px;
+    margin-bottom: 4%;
     /*bottom:55%;
     right:22%;
     padding:10px;
     transform:translateZ(0);*/
-}
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 .flashcard {
     width:350px;
