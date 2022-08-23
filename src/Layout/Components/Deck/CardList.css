@@ -20,6 +20,19 @@
 }
 .card-body{
     height: 305px;
+    border: dashed;
+    border-color: blue;
+    position: relative;
+}
+.card-body .flex-container{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card-body .flex-column{
+    display: flex;
+    flex-direction: column;
 }
 .deck-body{
     padding: 1.25rem;

@@ -187,11 +187,22 @@ header{
 	}
 }
 
-// Media query for R
-@media (min-width: 768px){
+// Media query for ???
+@media (min-width: 668px){
 	.container .col-md-8 {
 		-ms-flex: 0 0 66.666667%;
 		flex: 0 0 66.666667%;
 		max-width: 66.666667%;
+	}
+	.studycard{
+		height: 40%;
+		width: 50%;
+	}
+	.studycard img{
+		max-height: 100%;
+		max-width: 20%;
+	}
+	.studycard .card-body{
+		height: 100%;
 	}
 }

@@ -7,8 +7,8 @@ export default function OneCard({ front, back, cards, index, checked, flipCard, 
       <input type="radio" name="cards" className="card-checkbox" id={`toggle-card-${index + 1}`} />
       <div className="studycard" id={index + 1}>
         <div className="card-body">
-          <div className="d-flex flex-row justify-content-between">
-            <div className="col-8">
+          <div className="flex-container">
+            <div className="flex-column">
               <h5 className="card-title">
                 {`Card ${index + 1} of ${cards.length}`}
               </h5>
@@ -18,7 +18,7 @@ export default function OneCard({ front, back, cards, index, checked, flipCard, 
                 Flip
               </button>
             </div>
-            <div className="col-4">
+            <div className="flex-column">
               {
                 <img
                   src={checked ? frontCard : backCard}
