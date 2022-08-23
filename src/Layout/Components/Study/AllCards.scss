@@ -50,7 +50,7 @@ header{
 	transition: all .75s;
 	//CARD stuff
 	flex-direction: column;
-	min-width: 0;
+	max-width: 710px;
 	word-wrap: break-word;
 	//background-color: #fff;
 	background-clip: border-box;
@@ -61,6 +61,13 @@ header{
 	box-shadow: 0px 3px 5px rgb(0 0 0 / 50%);
 	border: 1px solid #726A53;
 	background-color: #F8F5ED;
+}
+
+.studycard img{
+    //max-width: 100%;
+    //height: auto;
+    max-height: 50%;
+    max-width: 14vw;
 }
 
 
@@ -177,5 +184,14 @@ header{
 		transform: rotate(0);
 		top: 45%;
 		background-color: #fff;
+	}
+}
+
+// Media query for R
+@media (min-width: 768px){
+	.container .col-md-8 {
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
 	}
 }
