@@ -6,36 +6,13 @@ import { React, useState, useEffect, useRef, createRef } from 'react'
 
 
 
-export default function AllCards({ cards }) {
+export default function AllCards({ cards, deck }) {
   console.log("AllCards")
   console.log(cards) // Array<{  }>;
-
-//  const [newCards, setnewCards] = useState(cards);
-  //const [front, setFront] = useState(true);
-  // TODO .push {checked: true} onto cards array?
-  //card.checked = true
-
-  const labelRef = useRef()
-
-  useEffect(() => {
-    cards.map((card) => {
-      console.log("card map thing")
-      card.checked = true
-    })
-
-    //run after component mounted
-    const timeoutId = setTimeout(() => {
-      labelRef.current.click();//trigger click 1 seconds
-    }, 1000)
-
-    return () => clearTimeout(timeoutId)
-  }, [])
+  console.log("deck")
+  console.log(deck)
 
 
-
-  function onClickLabel(index) {
-    // console.log("hiii"+index);
-  }
 
   //grab transformed cards array and make it a newCards state
   const [newCards, setnewCards] = useState(cards);
@@ -71,36 +48,15 @@ export default function AllCards({ cards }) {
   return (
     <>
       {/* nav begins here */}
-      <ul id="nav">
-        <li className="lowercase">
-          <label htmlFor="put-cards-down">(Restart)</label>
-        </li>
-        {newCards.map((newCard, index) =>
-          <li key={index}>
-            {(index == 1) ? (
-              <label id={`item-${index}`} ref={labelRef} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>
-                one Card {index + 1}
-              </label>
-            ) : (
-              <label id={`item-${index}`} onClick={onClickLabel(index)} htmlFor={`toggle-card-${index + 1}`}>
-                two Card {index + 1}
-              </label>
-            )}
-          </li>
-        )}
-      </ul>
-      {/* front-card */}
-      <h1 id="title"></h1>
-      <div id="description">Click card number above to start</div>
-
+      {/*TODO snatch deck-body into new component*/}
       {/* deck-bottom? */}
 
-      {newCards.map(({front, back, id, checked }) =>
+      {newCards.map(({ front, back, id, checked },index) =>
         /* index === cardNumber - 1 ? ( */
         // NOTE extract into child component?
         <OneCard
           cards={cards}
-          index={id}
+          index={index}
           checked={checked}
           front={front}
           back={back}

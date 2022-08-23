@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { readDeck } from '../../../utils/api';
 import { useHistory, useParams } from 'react-router-dom';
 import NoCards from './NoCards';
@@ -6,6 +6,7 @@ import AllCards from './AllCards';
 import BreadCrumb from '../Shared/BreadCrumb';
 import ReactLoading from 'react-loading';
 import ErrorAlert from '../Shared/ErrorAlert';
+import DeckNav from './DeckNav';
 
 export default function Study() {
   const { deckId } = useParams();
@@ -16,12 +17,32 @@ export default function Study() {
   const [error, setError] = useState(null);
   const history = useHistory();
 
+  const labelRef = useRef()
+
+
   useEffect(() => {
     setError(null)
     setDeck({})
     setCards([])
     getData(deckId)
+     //runs after component mounted
+    cards.map((card) => {
+      console.log("useEffect cards map card: ")
+      console.log(card)
+      card.checked = true
+    })
+
+    const timeoutId = setTimeout(() => {
+      console.log("labelRef: ");
+      console.log(labelRef);
+      labelRef.current.click();//finds current (card) and "clicks" it so it floats above deck
+    }, 1000)//trigger a click in 1 secs
+
+    return () => clearTimeout(timeoutId)
   }, [deckId])
+
+
+
   
   async function getData(deckId) {
     const abortController = new AbortController()
@@ -40,7 +61,7 @@ export default function Study() {
   }
 
   return (
-    <div className="container col-md-8 mx-auto">
+    <main className="container col-md-8 mx-auto">
       <ErrorAlert error={error} />
       {!isLoading ? (
         <ReactLoading
@@ -53,13 +74,12 @@ export default function Study() {
       ) : (
         <>
           <BreadCrumb deckId={deckId} name={deck.name} screen={'Study'} />
+          {cards.length > 2 ? (<DeckNav deck={deck} cards={cards} labelRef={labelRef}/> ):(<span>no cards in deck</span>)}
           <div className="flex-container">
             <div className="study-box col-lg">
-            <h2>Study: {deck.name}</h2>
-              {cards.length === 0 ? (
-                <NoCards cards={cards} deck={deck} />
-              ) : cards.length > 2 ? (
+            {cards.length > 2 ?(
                 <AllCards
+                  deck={deck}
                   cards={cards}
                   cardNumber={cardNumber}
                   setCardNumber={setCardNumber}
@@ -72,6 +92,6 @@ export default function Study() {
           </div>
         </>
       )}
-    </div>
+    </main>
   )
 }
