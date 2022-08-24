@@ -23,15 +23,17 @@
     border: dashed;
     border-color: blue;
     position: relative;
+    display: flex;
 }
 .card-body .flex-container{
     /*position: absolute;*/
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
 }
 .card-body .flex-container > div{
     width: 230px;
+
 }
 .card-body .flex-column{
     display: flex;
