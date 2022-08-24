@@ -19,7 +19,7 @@
     background-color:#343a40;
 }
 .card-body{
-    height: 305px;
+    /*height: 305px;*/
     border: dashed;
     border-color: blue;
     position: relative;
@@ -32,12 +32,27 @@
     justify-content: space-between;
 }
 .card-body .flex-container > div{
-    width: 230px;
+   /* width: 230px;*/
 
 }
 .card-body .flex-column{
     display: flex;
     flex-direction: column;
+}
+.flex-container .content > div{
+    /*max-width: 40%;*/
+    display: flex;
+     flex-wrap: wrap;
+}
+.card-title{
+    font-size: 3vh;
+}
+.flex-container .content .card-text{
+    /* flex: 50%;*/
+    font-size: 2vh;
+}
+.flex-container .content .btn{
+    /*flex: 5%;*/
 }
 .deck-body{
     padding: 1.25rem;

@@ -8,17 +8,19 @@ export default function OneCard({ front, back, cards, index, checked, flipCard, 
       <div className="studycard" id={index + 1}>
         <div className="card-body">
           <div className="flex-container">
-            <div className="">
+            <div className="content">
               <h5 className="card-title">
                 {`Card ${index + 1} of ${cards.length}`}
               </h5>
+              <div>
               <p className="card-text">{checked ? front : back}</p>
 
               <button className="btn btn-secondary mx-1" onClick={() => flipCard(index + 1)}>
                 Flip
               </button>
+              </div>
             </div>
-            <div className="">
+            <div className="image">
               {
                 <img
                   src={checked ? frontCard : backCard}
