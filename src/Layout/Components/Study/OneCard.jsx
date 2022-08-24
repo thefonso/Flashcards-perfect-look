@@ -8,7 +8,7 @@ export default function OneCard({ front, back, cards, index, checked, flipCard, 
       <div className="studycard" id={index + 1}>
         <div className="card-body">
           <div className="flex-container">
-            <div className="flex-column">
+            <div className="">
               <h5 className="card-title">
                 {`Card ${index + 1} of ${cards.length}`}
               </h5>
@@ -18,7 +18,7 @@ export default function OneCard({ front, back, cards, index, checked, flipCard, 
                 Flip
               </button>
             </div>
-            <div className="flex-column">
+            <div className="">
               {
                 <img
                   src={checked ? frontCard : backCard}

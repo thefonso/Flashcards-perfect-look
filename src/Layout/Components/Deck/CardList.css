@@ -25,10 +25,13 @@
     position: relative;
 }
 .card-body .flex-container{
-    position: absolute;
+    /*position: absolute;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.card-body .flex-container > div{
+    width: 230px;
 }
 .card-body .flex-column{
     display: flex;
