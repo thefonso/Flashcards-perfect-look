@@ -19,7 +19,7 @@
     background-color:#343a40;
 }
 .card-body{
-    /*height: 305px;*/
+    height: 305px;
     border: dashed;
     border-color: blue;
     position: relative;
@@ -31,9 +31,11 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.card-body .flex-container > div{
-   /* width: 230px;*/
-
+.card-body .flex-container .content{
+    flex-grow: 1;
+}
+.card-body .flex-container .image{
+    flex-grow: 2;
 }
 .card-body .flex-column{
     display: flex;
