@@ -31,8 +31,12 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.card-body .flex-container .content{
+.card-body .flex-container .content > div{
+    display:flex;
     flex-grow: 1;
+    height: 25vh;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
 .card-body .flex-container .image{
     flex-grow: 2;
