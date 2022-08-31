@@ -15,7 +15,7 @@ function Layout() {
   return (
     <div id="root-container">
       <Header />
-      <div className="container">
+      <div id="layout-indexjs">
         {/* TODO: Implement the screen starting here */}
         <Switch>
           <Route exact={true} path="/">

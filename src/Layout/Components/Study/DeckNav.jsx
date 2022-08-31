@@ -3,7 +3,7 @@ import React from 'react';
 export default function DeckNav({deck,cards,labelRef }) {
 
   return (
-    <div className="deck-body">
+    <div id="deck-nav">
        <h2>Study: {deck.name}</h2>
         <ul id="nav">
           <li className="lowercase">

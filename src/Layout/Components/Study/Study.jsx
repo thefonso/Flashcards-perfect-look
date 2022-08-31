@@ -61,7 +61,7 @@ export default function Study() {
   }
 
   return (
-    <main className="container col-md-8 mx-auto">
+    <main className="container-fluid col-md-10">
       <ErrorAlert error={error} />
       {!isLoading ? (
         <ReactLoading
@@ -75,8 +75,8 @@ export default function Study() {
         <>
           <BreadCrumb deckId={deckId} name={deck.name} screen={'Study'} />
           {cards.length > 2 ? (<DeckNav deck={deck} cards={cards} labelRef={labelRef}/> ):(<span>no cards in deck</span>)}
-          <div className="flex-container">
-            <div className="study-box col-lg">
+
+            <div className="study-box">
             {cards.length > 2 ?(
                 <AllCards
                   deck={deck}
@@ -89,7 +89,7 @@ export default function Study() {
                 <NoCards cards={cards} deck={deck} />
               )}
             </div>
-          </div>
+
         </>
       )}
     </main>

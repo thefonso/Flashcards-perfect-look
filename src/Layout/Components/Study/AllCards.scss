@@ -31,7 +31,7 @@ header{
 
 .studycard {
 	// display: flex;
-	$width: 50%;
+	$width: 93%;
 	$height: 40%;
 	//$height: $width * 0.67;
 	box-sizing: border-box;
@@ -50,7 +50,7 @@ header{
 	transition: all .75s;
 	//CARD stuff
 	flex-direction: column;
-	max-width: 710px;
+	//max-width: 710px;
 	word-wrap: break-word;
 	//background-color: #fff;
 	background-clip: border-box;
@@ -124,6 +124,12 @@ header{
 }
 
 
+main {
+	//col-md-8
+	//mx-auto
+	align-items: center;
+}
+
 // Navigation
 
 #nav {
@@ -156,8 +162,28 @@ header{
 }
 
 
-// Media query for mobile
-@media (max-width: 390px){
+// Media query for Tablet 992
+@media screen and (min-width: 768px) and (max-width: 1180px){
+	.container .col-md-8 {
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+	.studycard{
+		height: 40%;
+		width: 81%;
+	}
+	.studycard img{
+		max-height: 100%;
+		max-width: 100%;
+	}
+	.studycard .card-body{
+		height: 100%;
+	}
+}
+
+// Media query for phone
+@media screen and (min-width: 600px) and (min-width:844px){
 	h1.display-4{
 		font-size: 2.5rem;
 	}
@@ -173,11 +199,11 @@ header{
 		padding-left: 0%;
 	}
 	.studycard{
-		$width: 350px;
-		width: $width;
+	//	$width: 350px;
+		width: 80%;
 		//	height: 100%;
-		left: 50%;
-		margin-left: -$width / 2;
+	//	left: 50%;
+	//	margin-left: -$width / 2;
 	}
 	.card-checkbox:checked + .studycard {
 		margin-top: 0%;
@@ -187,22 +213,10 @@ header{
 	}
 }
 
-// Media query for ???
-@media (min-width: 668px){
-	.container .col-md-8 {
-		-ms-flex: 0 0 66.666667%;
-		flex: 0 0 66.666667%;
-		max-width: 66.666667%;
-	}
+// frackin duo
+@media screen and (max-width: 720px){
 	.studycard{
-		height: 40%;
-		width: 50%;
-	}
-	.studycard img{
-		max-height: 100%;
-		max-width: 100%;
-	}
-	.studycard .card-body{
-		height: 100%;
+		width: 96%;
 	}
 }
+
