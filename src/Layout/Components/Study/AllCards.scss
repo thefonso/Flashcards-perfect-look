@@ -75,6 +75,17 @@ header{
     width: 100%;
     justify-content: space-between;
 }
+.card-body .flex-container .content > div {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 25vh;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flex-container .content .btn {
+    width: fit-content; //keeps button normal sized
+}
 // Card deck
 
 %first-card-in-deck {
