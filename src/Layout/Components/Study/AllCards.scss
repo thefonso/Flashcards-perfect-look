@@ -70,7 +70,11 @@ header{
     max-width: 14vw;
 }
 
-
+.card-body .flex-container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
 // Card deck
 
 %first-card-in-deck {

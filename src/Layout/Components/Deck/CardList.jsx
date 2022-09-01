@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './CardList.css'
+import './CardList.scss'
 
 export default function CardList({handleDelete, cards, id}) {
   return (
