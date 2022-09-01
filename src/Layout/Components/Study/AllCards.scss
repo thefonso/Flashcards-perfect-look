@@ -69,7 +69,13 @@ header{
     max-height: 50%;
     max-width: 14vw;
 }
-
+.card-body {
+    height: 100%;
+    border: dashed;
+    border-color: blue;
+    position: relative;
+    display: flex;
+}
 .card-body .flex-container {
     flex-direction: row;
     width: 100%;
@@ -79,7 +85,7 @@ header{
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    height: 25vh;
+    height: 85%;
     flex-wrap: wrap;
     justify-content: space-between;
 }
