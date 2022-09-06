@@ -61,7 +61,7 @@ export default function Study() {
   }
 
   return (
-    <main className="container-fluid col-md-10">
+    <main id="study" className="flex-container">
       <ErrorAlert error={error} />
       {!isLoading ? (
         <ReactLoading

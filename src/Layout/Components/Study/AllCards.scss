@@ -27,18 +27,20 @@
 header{
 	// height: 20vh;
 }
-// Cards
 
+//Study Page widths
+
+
+// Cards
 .studycard {
 	// display: flex;
-	$width: 93%;
 	$height: 40%;
 	//$height: $width * 0.67;
 	box-sizing: border-box;
 	position: fixed;
 	top: 90%; //peek from screen bottom
 	// left: 50%;
-	width: $width;
+	width: 100%;
 	height: $height;
 	// margin-left: -$width / 2;
 	padding: 1rem;
@@ -92,7 +94,7 @@ header{
 .flex-container .content .btn {
     width: fit-content; //keeps button normal sized
 }
-// Card deck
+// Card dec
 
 %first-card-in-deck {
 	transform: rotate(2deg);
@@ -126,10 +128,12 @@ header{
 	background-color: #fff;
 }
 
-.study-box{
-	position: absolute;
-	height: 100%;
-}
+//.study-box{
+//	position: absolute;
+//	height: 100%;
+//	width: 50%; //50% at Large Desktop
+//	z-index: 2;
+//}
 // Modify deck when certain cards are active so that the deck looks always the same (except if there isn't enough cards)
 
 .card-checkbox:first-of-type:checked ~ .card-checkbox:nth-of-type(2) + .studycard {
@@ -148,12 +152,14 @@ header{
 main {
 	//col-md-8
 	//mx-auto
-	align-items: center;
+	//align-items: center;
 }
 
 // Navigation
-
-#nav {
+#deck-nav{
+	width:80%;
+}
+#nav { //TODO is this block being used?
 	display: flex;
 	flex-wrap: wrap;
 	// justify-content: center;
@@ -181,10 +187,61 @@ main {
 .flex-container{
 	display: flex;
 }
+// MEDIA QUERIES BEGIN
 
+// large desktop
+@media (min-width: 1180px){
+	#deck-nav{
+		width:50%;
+		z-index:4;
+	}
+	.study-box{
+		position: absolute;
+		height: 100%;
+		width: 50%; //50% at Large Desktop
+		z-index: 2;
+	}
+	#study{
+		max-width: 100%;
+		display:flex;
+		align-items: center;
+		flex-direction: column;
+		border: brown;
+		border: dashed;
+	}
+	.studycard{
+		height: 40%;
+		width: 50%;
+	}
+	#study>nav{
+		width:50%
+	}
+}
 
 // Media query for Tablet 992
-@media screen and (min-width: 768px) and (max-width: 1180px){
+@media screen and (min-width: 768px) and (max-width: 1179.98px){
+#deck-nav{
+	width:64%;
+	z-index:4;
+}
+    #study{
+		max-width: 100%;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		border: brown;
+		border: dashed;
+	}
+	#study>nav{
+		//background-color: red;
+		width:64%
+	}
+	.study-box{
+		position: absolute;
+		height: 100%;
+		width: 64%; //50% at Large Desktop
+		z-index: 2;
+	}
 	.container .col-md-8 {
 		-ms-flex: 0 0 66.666667%;
 		flex: 0 0 66.666667%;
@@ -192,7 +249,7 @@ main {
 	}
 	.studycard{
 		height: 40%;
-		width: 81%;
+		width: 64%;
 	}
 	.studycard img{
 		max-height: 100%;
@@ -204,7 +261,28 @@ main {
 }
 
 // Media query for phone
-@media screen and (min-width: 600px) and (min-width:844px){
+@media screen and (min-width: 600px) and (max-width:767.98px){
+    #study{
+		max-width: 100%;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		border: brown;
+		border: dashed;
+	}
+	#study>nav{
+		width:73%;
+	}
+	.study-box{
+		position: absolute;
+		height: 100%;
+		width: 73%; //50% at Large Desktop
+		z-index: 2;
+	}
+#deck-nav{
+	width:73%;
+	z-index: 4;
+}
 	h1.display-4{
 		font-size: 2.5rem;
 	}
@@ -219,23 +297,23 @@ main {
 		padding-right:0%;
 		padding-left: 0%;
 	}
-	.studycard{
-	//	$width: 350px;
-		width: 80%;
-		//	height: 100%;
-	//	left: 50%;
-	//	margin-left: -$width / 2;
+	.studycard{//BOTTOM CARD STACK
+		width: 73%;
 	}
 	.card-checkbox:checked + .studycard {
 		margin-top: 0%;
 		transform: rotate(0);
 		top: 45%;
 		background-color: #fff;
+		width: 73%;
 	}
 }
 
 // frackin duo
 @media screen and (max-width: 720px){
+#deck-nav{
+	width:80%;
+}
 	.studycard{
 		width: 96%;
 	}
