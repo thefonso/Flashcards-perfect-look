@@ -1,6 +1,6 @@
 import frontCard from '../../Images/frontCard.png'
 import backCard from '../../Images/backCard.png'
-import './AllCards.scss'
+import './FlipCards.scss'
 import OneCard from './OneCard'
 import { React, useState, useEffect, useRef, createRef } from 'react'
 //TODO - refactor these unused things

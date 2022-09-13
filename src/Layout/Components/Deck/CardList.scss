@@ -19,7 +19,7 @@
 }
 
 /* CARD BODY keep things in column*/
-#cardlist.card-body{
+#cardlist .card-body{
     height: 100%;
     /*border: 1px dashed blue;*/
     position: relative;
@@ -27,21 +27,21 @@
     flex-direction: column; /* AFFECTING study flip card image */
 }
 
-#cardlist.card-body .flex-container{
+#cardlist .card-body .flex-container{
     /*position: absolute;*/
     /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
 }
 
-#cardlist.card-body .flex-container .content > div{
+#cardlist .card-body .flex-container .content > div{
     display:flex;
     flex-grow: 1;
     height: 25vh;
     flex-wrap: wrap;
     align-content: space-between;
 }
-#cardlist.card-body .flex-column{
+#cardlist .card-body .flex-column{
     display: flex;
     flex-direction: column;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { readDeck } from '../../../utils/api';
 import { useHistory, useParams } from 'react-router-dom';
 import NoCards from './NoCards';
-import AllCards from './AllCards';
+import FlipCards from './FlipCards';
 import BreadCrumb from '../Shared/BreadCrumb';
 import ReactLoading from 'react-loading';
 import ErrorAlert from '../Shared/ErrorAlert';
@@ -76,9 +76,9 @@ export default function Study() {
           <BreadCrumb deckId={deckId} name={deck.name} screen={'Study'} />
           {cards.length > 2 ? (<DeckNav deck={deck} cards={cards} labelRef={labelRef}/> ):(<span>no cards in deck</span>)}
 
-            <div className="study-box">
+            <div id="flipcard" className="study-box">
             {cards.length > 2 ?(
-                <AllCards
+                <FlipCards
                   deck={deck}
                   cards={cards}
                   cardNumber={cardNumber}

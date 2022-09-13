@@ -49,31 +49,32 @@
 }
 
 .studycard img{
-    max-height: 50%;
-    max-width: 14vw;
+	max-height: 50%;
+	max-width: 14vw;
 }
-.card-body {
-    height: 100%;
-    border: dashed;
-    border-color: blue;
-    position: relative;
-    display: flex;
+#flipcard .card-body {
+	height: 100%;
+	//border: dashed blue;
+	position: relative;
+	display: flex;
 }
-.card-body .flex-container {
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+
+#flipcard .card-body .flex-container {
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
 }
-.card-body .flex-container .content > div {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    height: 85%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#flipcard .card-body .flex-container .content > div {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	height: 85%;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
+
 .flex-container .content .btn {
-    width: fit-content; /* keeps button normal sized */
+	width: fit-content; /* keeps button normal sized */
 }
 /* Card dec*/
 
@@ -129,8 +130,33 @@
 #deck-nav{
 	width:80%;
 }
-  /*
 
+
+#nav { /*TODO is this block being used?*/
+	display: flex;
+	flex-wrap: wrap;
+	// justify-content: center;
+	padding-left: 0;
+	list-style: none;
+	font-size: .95rem;
+	color: #000000;
+
+
+	li:not(.lowercase) { text-transform: uppercase; }
+
+	label {
+		display: block;
+		// padding: .75rem 1.25rem;
+		padding-right: 1.25rem;
+		cursor: pointer;
+		transition: color .25s;
+
+		&:hover {
+			color: #007bff;
+			text-decoration: underline;
+		}
+	}
+}
 
 .flex-container{
 	display: flex;
@@ -172,11 +198,11 @@
 
 /* Media query for Tablet 992 */
 @media screen and (min-width: 768px) and (max-width: 1179.98px){
-#deck-nav{
-	width:69%;
-	z-index:4;
-}
-    #study{
+	#deck-nav{
+		width:69%;
+		z-index:4;
+	}
+	#study{
 		max-width: 100%;
 		display:flex;
 		flex-direction: column;
@@ -207,7 +233,7 @@
 		max-height: 100%;
 		max-width: 100%;
 	}
-	.studycard .card-body{
+	#study.studycard .card-body{
 		height: 100%;
 	}
 	#description{
@@ -217,7 +243,7 @@
 
 /* Media query for phone */
 @media screen and (min-width: 600px) and (max-width:767.98px){
-    #study{
+	#study{
 		max-width: 100%;
 		display:flex;
 		flex-direction: column;
@@ -234,10 +260,10 @@
 		width: 76%; /*50% at Large Desktop*/
 		z-index: 2;
 	}
-#deck-nav{
-	width:76%;
-	z-index: 4;
-}
+	#deck-nav{
+		width:76%;
+		z-index: 4;
+	}
 	h1.display-4{
 		font-size: 2.5rem;
 	}
@@ -252,7 +278,7 @@
 		padding-right:0%;
 		padding-left: 0%;
 	}
-	.studycard{/*BOTTOM CARD STACK*/
+	#study.studycard{/*BOTTOM CARD STACK*/
 		width: 76%;
 	}
 	.card-checkbox:checked + .studycard {
@@ -269,7 +295,7 @@
 
 /* frackin duo*/
 @media screen and (max-width: 599.98px){
-    #study{
+	#study{
 		max-width: 100%;
 		display:flex;
 		flex-direction: column;
@@ -286,10 +312,10 @@
 		width: 80%;
 		z-index: 2;
 	}
-#deck-nav{
-	width:80%;
-	z-index: 4;
-}
+	#deck-nav{
+		width:80%;
+		z-index: 4;
+	}
 	h1.display-4{
 		font-size: 2.5rem;
 	}
@@ -304,7 +330,7 @@
 		padding-right:0%;
 		padding-left: 0%;
 	}
-	.studycard{
+	#study.studycard{
 		width: 80%;
 	}
 	.card-checkbox:checked + .studycard {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function OneCard({ front, back, cards, index, checked, flipCard, frontCard, backCard }) {
+export default function OneCard({front, back, cards, index, checked, flipCard, frontCard, backCard }) {
   console.log("OneCard index: "+index)
   return (
     <>
