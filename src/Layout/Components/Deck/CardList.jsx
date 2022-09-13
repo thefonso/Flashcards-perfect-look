@@ -4,7 +4,7 @@ import './CardList.scss'
 
 export default function CardList({handleDelete, cards, id}) {
   return (
-    <div className="card-body">
+    <div id="cardlist" className="card-body">
       <h2 className="card-title">Cards</h2>
       {cards.length > 0 ? (
         cards.map((card, index) => {

@@ -1,11 +1,10 @@
 .carddesign {
     top:0%;
     right:0%;
-    /*height:75%;*/
+    min-height:40vh;
     border-radius:8px;
     margin-bottom:4px;
     box-shadow: 0px 3px 5px rgba(0,0,0,.5);
-
     border:1px solid #726A53;
     background-color:#F8F5ED;
     overflow:hidden;
@@ -18,33 +17,36 @@
 .back-color{
     background-color:#343a40;
 }
-.card-body{
-    height: 305px;
-    border: dashed;
-    border-color: blue;
+
+/* CARD BODY keep things in column*/
+#cardlist.card-body{
+    height: 100%;
+    /*border: 1px dashed blue;*/
     position: relative;
     display: flex;
+    flex-direction: column; /* AFFECTING study flip card image */
 }
-.card-body .flex-container{
+
+#cardlist.card-body .flex-container{
     /*position: absolute;*/
     /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
 }
-.card-body .flex-container .content > div{
+
+#cardlist.card-body .flex-container .content > div{
     display:flex;
     flex-grow: 1;
     height: 25vh;
     flex-wrap: wrap;
     align-content: space-between;
 }
-.card-body .flex-container .image{
-    //flex-grow: 2;
-}
-.card-body .flex-column{
+#cardlist.card-body .flex-column{
     display: flex;
     flex-direction: column;
 }
+
+
 .flex-container .content > div{
     /*max-width: 40%;*/
     display: flex;

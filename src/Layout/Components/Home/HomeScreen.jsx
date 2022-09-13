@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import './HomeScreen.css'
+import './HomeScreen.scss'
 
 export default function HomeScreen({ decks, handleDelete }) {
   const myStyle = [
@@ -19,7 +19,7 @@ export default function HomeScreen({ decks, handleDelete }) {
   ]
   const Child = ({mystyle, id, name, length, description }) => {
     return (
-      <div className="flashcard card" key={id} style={mystyle}>
+      <div id="flashcard" className="card" key={id} style={mystyle}>
         <div className="card-header bg-dark text-light">
           <h3 className="card-title">{name}</h3>
           <h5 className="card-subtitle">{length} cards</h5>

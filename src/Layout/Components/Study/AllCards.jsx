@@ -3,8 +3,8 @@ import backCard from '../../Images/backCard.png'
 import './AllCards.scss'
 import OneCard from './OneCard'
 import { React, useState, useEffect, useRef, createRef } from 'react'
-
-
+//TODO - refactor these unused things
+//TODO how to convert sass animation code if we need to change AllCards to a module.css file?
 
 export default function AllCards({ cards, deck }) {
   console.log("AllCards")
