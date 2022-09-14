@@ -10,7 +10,7 @@ function Header() {
           <img className="img-fluid" src={logo} alt="Card Deck Logo" ></img>
         </div>
         <div id="header-text">
-          <h1 className="title">Studycards-O-Matic</h1>
+          <h1 className="title">Study-O-Matic</h1>
           <p className="lead">Awesome Cards for Awesome People</p>
         </div>
       </div>

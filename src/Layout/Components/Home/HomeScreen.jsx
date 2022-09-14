@@ -50,7 +50,7 @@ export default function HomeScreen({ decks }) {
         New Deck
         </Link>
       </div>
-      <div className="container-4-deck-container flex-wrap">
+      <div className="container-4-deck-container">
         {decks.map((deck,index) => {
           return (
             <div className="deck-container" key={deck.id}>
