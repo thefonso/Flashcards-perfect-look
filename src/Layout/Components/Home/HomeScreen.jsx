@@ -44,13 +44,13 @@ export default function HomeScreen({ decks }) {
   //   TODO make this a button sitting on a table
 
   return (
-    <main className="container">
+    <main id="homescreen">
       <div id="create-deck-button">
         <Link className="round btn btn-lg btn-primary" to="/decks/new">
         New Deck
         </Link>
       </div>
-      <div className="d-flex flex-sm-row flex-column flex-wrap justify-content-around" style={{ maxWidth: '100%' }}>
+      <div className="container-4-deck-container flex-wrap">
         {decks.map((deck,index) => {
           return (
             <div className="deck-container" key={deck.id}>
