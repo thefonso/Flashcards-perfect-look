@@ -1,5 +1,4 @@
-/* mobile layout */
-
+//MODILE DEFAULT VIEW 390x844
 #create-deck-button{
     display: flex;
     margin-bottom: 4vh;
@@ -13,16 +12,21 @@
 .deck{
     display: flex;
     position: relative;
-    width: 87vw;
+    width: 78vw;
     height: 100vw;
     margin-bottom: 8%;
-    /*bottom:55%;
-    right:22%;
-    padding:10px;
-    transform:translateZ(0);*/
 }
-#flashcard {
-    width:350px !important;
+.deck-container{
+    //width: 50%;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+   // border: dashed black;
+}
+.flashcard {
+    //width:350px;
+    width: 30vh;
     position: absolute;
     top:0%;
     right:0%;
@@ -40,8 +44,10 @@
     font-size:18px;
     z-index:0;
 }
+
+
 /*TODO IMPORTED from external css files */
-#flashcard.card-body {
+.flashcard.card-body {
     height: 305px;
     border: dashed;
     border-color: blue;
@@ -49,17 +55,17 @@
     display: flex;
 }
 
-@media only screen and (min-width: 768px){
-    /* for desktop */
+
+/*MEIDA TABLET*/
+
+/*MEDIA DESKTOP*/
+@media (min-width: 991px) and (max-width: 1199.98px){
     #create-deck-button{
         display: flex;
         width:100%;
         margin-bottom:4vh;
         justify-content: center;
         align-items: center;
-    }
-    .square{
-
     }
     .round{
         width: 10% !important;
@@ -69,7 +75,7 @@
     .deck{
         display: flex;
         position: relative;
-        width: 400px;
+        width: 364px;
         height: 500px;
         margin-bottom: 4%;
         /*bottom:55%;
@@ -77,7 +83,13 @@
     padding:10px;
     transform:translateZ(0);*/
     }
-    #flashcard {
+    .deck-container{
+        margin-bottom: 24px;
+        margin: auto;
+        padding: 0;
+        border: dashed black;
+    }
+    .flashcard {
         width:350px;
         position: absolute;
         top:0%;
@@ -95,5 +107,139 @@
         transition: 0.6s;
         font-size:18px;
         z-index:0;
+    }
+}
+////////////////////////////////////////////////////////////////NEW MEDIA BELOW THIS LINE
+        /* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        background-color: red;
+    }
+    #create-deck-button{
+        display: flex;
+        margin-bottom: 4vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .round{
+        width: 100%;
+    }
+    .deck{
+        display: flex;
+        position: relative;
+        width: 95%; /////////////////////////
+        height: 100vw;
+        margin-bottom: 8%;
+        /*bottom:55%;
+    right:22%;
+    padding:10px;
+    transform:translateZ(0);*/
+    }
+    .deck-container{
+        width: 93%;////////////////////////////
+        margin-bottom: 24px;
+        margin-left: auto;
+        margin-right:auto;
+        padding: 0;
+        border: dashed black;
+    }
+    .flashcard {
+        width: 95%;//////////////////////////
+        position: absolute;
+       // top:0%;
+       // right:0%;
+        height:100%;
+        border-radius:8px;
+        margin-bottom:4px;
+        box-shadow: 0px 3px 5px rgba(0,0,0,.5);
+
+        border:1px solid #726A53;
+        background-color:#F8F5ED;
+        overflow:hidden;
+        padding:8px;
+        box-sizing:border-box;
+        transition: 0.6s;
+        font-size:18px;
+        z-index:0;
+    }
+
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+    body {
+        background-color: blue;
+    }
+    #create-deck-button{
+        display: flex;
+        width:100%;
+        margin-bottom:4vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .round{
+        width: 10% !important;
+        border-radius: 50%;
+        text-align: center;
+    }
+    .deck{
+        display: flex;
+        position: relative;
+        width: 50%;//////////////////////////////////
+        height: 500px;
+        margin-bottom: 4%;
+        /*bottom:55%;
+    right:22%;
+    padding:10px;
+    transform:translateZ(0);*/
+    }
+    .deck-container{
+        width: 93%;/////////////////////////////////
+        margin-bottom: 24px;
+        margin-left: auto;
+        margin-right:auto;
+        padding: 0;
+        border: dashed black;
+    }
+    .flashcard {
+        width:50%;///////////////////////////////////
+        position: absolute;
+        top:0%;
+        right:0%;
+        height:100%;
+        border-radius:8px;
+        margin-bottom:4px;
+        box-shadow: 0px 3px 5px rgba(0,0,0,.5);
+
+        border:1px solid #726A53;
+        background-color:#F8F5ED;
+        overflow:hidden;
+        padding:8px;
+        box-sizing:border-box;
+        transition: 0.6s;
+        font-size:18px;
+        z-index:0;
+    }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+    body {
+        background-color: green;
+    }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    body {
+        background-color: white;
     }
 }

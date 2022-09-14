@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 import './HomeScreen.scss'
 
-export default function HomeScreen({ decks, handleDelete }) {
+export default function HomeScreen({ decks }) {
   const myStyle = [
     {
       transform: "rotateZ(5deg)",
@@ -17,9 +17,10 @@ export default function HomeScreen({ decks, handleDelete }) {
       top: "0px"
     }
   ]
+  //TODO make this CHILD a seperate componet and import it
   const Child = ({mystyle, id, name, length, description }) => {
     return (
-      <div id="flashcard" className="card" key={id} style={mystyle}>
+      <div className="flashcard card" key={id} style={mystyle}>
         <div className="card-header bg-dark text-light">
           <h3 className="card-title">{name}</h3>
           <h5 className="card-subtitle">{length} cards</h5>
@@ -46,14 +47,13 @@ export default function HomeScreen({ decks, handleDelete }) {
     <main className="container">
       <div id="create-deck-button">
         <Link className="round btn btn-lg btn-primary" to="/decks/new">
-        {/* <i className="bi bi-plus-lg mr-2"></i> */}
         New Deck
         </Link>
       </div>
-      <div className="d-flex flex-lg-row flex-column flex-wrap justify-content-around" style={{ maxWidth: '100%' }}>
+      <div className="d-flex flex-sm-row flex-column flex-wrap justify-content-around" style={{ maxWidth: '100%' }}>
         {decks.map((deck,index) => {
           return (
-            <div className="mb-4 mx-auto p-0 col-lg-5" key={deck.id}>
+            <div className="deck-container" key={deck.id}>
               {/* TODO: refactor out this repeated element */}
               <div className="deck">
                 {/* TODO: loop for three? */}
