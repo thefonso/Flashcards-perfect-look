@@ -16,7 +16,6 @@ export default function Study() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const history = useHistory();
-
   const labelRef = useRef()
 
 
@@ -74,8 +73,11 @@ export default function Study() {
       ) : (
         <>
           <BreadCrumb deckId={deckId} name={deck.name} screen={'Study'} />
-          {cards.length > 2 ? (<DeckNav deck={deck} cards={cards} labelRef={labelRef}/> ):(<span>no cards in deck</span>)}
-
+          {cards.length > 2 ?(
+            <DeckNav deck={deck} cards={cards} labelRef={labelRef}/>
+          ) : (
+             <span>no cards in deck</span>
+          )}
             <div id="flipcard" className="study-box">
             {cards.length > 2 ?(
                 <FlipCards

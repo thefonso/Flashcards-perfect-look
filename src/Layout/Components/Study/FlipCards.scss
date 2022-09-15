@@ -50,7 +50,7 @@
 
 .studycard img{
 	max-height: 50%;
-	max-width: 14vw;
+//	max-width: 14vw;
 }
 #flipcard .card-body {
 	height: 100%;
@@ -60,17 +60,32 @@
 }
 
 #flipcard .card-body .flex-container {
-	flex-direction: row;
+	flex-direction: column;
 	width: 100%;
+	//justify-content: space-between;
+}
+#flipcard .card-body .flex-container .top-row {
+	display: flex;
+	//flex-grow: 1;//TODO what does this do again?
+	flex-direction: row;
+	height: 85%;
+	//flex-wrap: wrap;
 	justify-content: space-between;
 }
-#flipcard .card-body .flex-container .content > div {
-	display: flex;
-	flex-grow: 1;
-	flex-direction: column;
-	height: 85%;
-	flex-wrap: wrap;
-	justify-content: space-between;
+#flipcard .prev-next-buttons{
+	//background-color: hotpink;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+
+}
+.prev-next-buttons label{
+	margin-bottom:0;
+}
+#flipcard .front-back-deck-image{
+	background-color: gray;
+	width: 13% //TODO this is sus
+
 }
 
 .flex-container .content .btn {
@@ -102,15 +117,15 @@
 /* Active card */
 
 .card-checkbox:checked + .studycard {
-	/*	margin-top: -10%;*/
-	/*position: absolute;*/
 	transform: translate(0%, 10%);
 	transform: rotate(0);
-	top: 45%;
+	top: 37%;
 	background-color: #fff;
 }
 
-/* Modify deck when certain cards are active so that the deck looks always the same (except if there isn't enough cards)*/
+/* Modify deck when certain cards are active so that the deck looks always the same
+ *
+(except if there isn't enough cards)*/
 
 .card-checkbox:first-of-type:checked ~ .card-checkbox:nth-of-type(2) + .studycard {
 	@extend %first-card-in-deck;
@@ -133,7 +148,7 @@
 
 
 #nav { /*TODO is this block being used?*/
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
 	// justify-content: center;
 	padding-left: 0;
@@ -212,6 +227,7 @@
 	}
 	#study>nav{
 		/*background-color: red;*/
+		font-size: x-large;
 		width:69%
 	}
 	.study-box{
@@ -230,14 +246,18 @@
 		width: 69%;
 	}
 	.studycard img{
-		max-height: 100%;
-		max-width: 100%;
+		display: none;
+		//max-height: 100%;
+	//	max-width: 100%;
 	}
 	#study.studycard .card-body{
 		height: 100%;
 	}
 	#description{
 		display:none;
+	}
+	p.card-text{
+		font-size: x-large;
 	}
 }
 
@@ -336,7 +356,7 @@
 	.card-checkbox:checked + .studycard {
 		margin-top: 0%;
 		transform: rotate(0);
-		top: 45%;
+		top: 35%;
 		background-color: #fff;
 		width: 80%;
 	}
