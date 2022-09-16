@@ -34,8 +34,8 @@ header .lead{
         margin-bottom: 4%;
         padding-left: 1%;
         padding-right: 1%;
-        padding-bottom: 2%;
-        height: 20vh;
+       /* padding-bottom: 2%;*/
+ /*       height: 20vh;*/
         position:relative;
     }
     header .title{

@@ -16,8 +16,8 @@ function restart(){
   return (
     <>
       <input type="radio" name="cards" className="card-checkbox" id={`toggle-card-${index + 1}`} />
-      <div className="studycard" id={index + 1}>
-        <div className="card-body">
+      <div className={`studycard ${checked ? "text-white":""}`} id={index + 1}>
+        <div className={`card-body ${checked ? "back-color":""}`}>
           <div className="flex-container">
 
             <div className="top-row">
@@ -29,9 +29,8 @@ function restart(){
               </div>
 
               <div className="front-back-deck-image">
-                <button className="btn btn-outline-dark mx-1" onClick={() => flipCard(index + 1)}>
-                  Flip
-                  <img src={checked ? frontCard : backCard} className="img-fluid" alt="cards"></img>
+                <button className={`btn ${checked ? "btn-secondary":"btn-dark"} mx-1`} onClick={() => flipCard(index + 1)}>
+                  {checked ?("Flip"):("Flip")}
                 </button>
               </div>
             </div>
@@ -39,7 +38,7 @@ function restart(){
             <div className="prev-next-buttons">
               {index === 0 ?(<></>
               ):(
-                <button className="btn btn-outline-dark mx-1">
+                <button className={`btn ${checked ? "hide" :"btn-outline-dark"} mx-1`}>
                 <label htmlFor={`toggle-card-${index}`}>
                   Prev
                 </label>
@@ -47,7 +46,7 @@ function restart(){
               )}
 
               {(index !== (cards.length - 1) )?(
-              <button className="btn btn-outline-dark mx-1">
+              <button className={`btn ${checked ? "hide":"btn-outline-dark"} mx-1`}>
                 <label htmlFor={`toggle-card-${index + 2}`}>
                   Next
                 </label>
