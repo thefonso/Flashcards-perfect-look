@@ -389,7 +389,11 @@
     body {
         background-color: red;
     }
-		.card-checkbox:checked + .studycard {
+	.studycard{
+		height: 40%;
+		width: 80%;
+	}
+	.card-checkbox:checked + .studycard {
 		margin-top: 0%;
 		transform: rotate(0);
 		top: 37%;
@@ -403,6 +407,10 @@
     body {
         background-color: yellow;
     }
+	.studycard{
+		height: 40%;
+		width: 80%;
+	}
 	.card-checkbox:checked + .studycard {
 		margin-top: 0%;
 		transform: rotate(0);
@@ -417,7 +425,11 @@
     body {
         background-color: blue;
     }
-		.card-checkbox:checked + .studycard {
+	.studycard{
+		height: 40%;
+		width: 70%;
+	}
+	.card-checkbox:checked + .studycard {
 		margin-top: 0%;
 		transform: rotate(0);
 		top: 35%;
