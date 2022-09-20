@@ -2,7 +2,7 @@
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('./data/db.json')
-const middlewares = jsonServer.defaults()
+const middlewares = jsonServer.defaults({"static":"./docs/api"})
 
 server.use(middlewares)
 // Add this before server.use(router)
