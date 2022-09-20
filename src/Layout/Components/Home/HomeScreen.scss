@@ -6,9 +6,6 @@
     justify-content: center;
     align-items: center;
 }
-.round{
-    width: 100%;
-}
 .deck{
     display: flex;
     position: relative;
@@ -22,7 +19,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0;
-    border: dashed black;
+    //border: dashed black;
 }
 .flashcard {
     width: 33vh;//////////////////////
@@ -84,7 +81,7 @@ p.card-text{
         align-items: center;
     }
     .round{
-        width: 100%;
+        width: 35%;
     }
     .deck{
         display: flex;
@@ -141,13 +138,13 @@ p.card-text{
         align-items: center;
     }
     .round{
-        width: 100%;
+       // width: 10%;
     }
     .deck{
         display: flex;
         position: relative;
         width: 93%; /////////////////////////
-        height: 89vw;
+        height: 95vw;
         margin-bottom: 8%;
     }
     .deck-container{
@@ -156,7 +153,7 @@ p.card-text{
         margin-left: auto;
         margin-right:auto;
         padding: 0;
-        border: dashed black;
+        //border: dashed black;
     }
     .flashcard {
         width: 93%;//////////////////////////
@@ -216,7 +213,7 @@ p.card-text{
         margin-left: auto;
         margin-right:auto;
         padding: 0;
-        border: dashed black;
+       // border: dashed black;
     }
     .flashcard {
         width:100%;///////////////////////////////////
@@ -257,9 +254,9 @@ p.card-text{
         align-items: center;
     }
     .round{
-        width: 10% !important;
-        border-radius: 50%;
-        text-align: center;
+        //width: 10% !important;
+       // border-radius: 50%;
+        //text-align: center;
     }
     .deck{
         display: flex;
@@ -274,7 +271,7 @@ p.card-text{
         margin-left: auto;
         margin-right:auto;
         padding: 0;
-        border: dashed black;
+       // border: dashed black;
     }
     .flashcard {
         width:100%;///////////////////////////////////
@@ -346,7 +343,7 @@ p.card-text{
         margin-bottom: 24px;
         margin: auto;
         padding: 0;
-        border: dashed black;
+        //border: dashed black;
     }
     .flashcard {
         width:350px;/////////////////////////
@@ -416,10 +413,10 @@ p.card-text{
         margin-bottom: 4%;
     }
     .deck-container{
-        width: 16%;////////////////////////
+        width: 28%;////////////////////////
         margin: 0px 40px 0px 40px;
         padding: 0;
-        border: dashed black;
+      //  border: dashed black;
     }
     .flashcard {
         width:350px;/////////////////////////

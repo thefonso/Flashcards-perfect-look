@@ -2,6 +2,7 @@
  * Defines the base URL for the API.
  * The default values is overridden by the `API_BASE_URL` environment variable.
  */
+console.log("utils/api/index.js")
 const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8080";
 
 /**
