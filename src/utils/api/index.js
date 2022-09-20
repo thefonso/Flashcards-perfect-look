@@ -4,7 +4,7 @@
  */
 console.log("utils/api/index.js: ")
 console.log(process.env)
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8080";
+const API_BASE_URL = process.env.VERCEL_URL || "http://localhost:8080";
 
 /**
  * Defines the default headers for these functions to work with `json-server`
