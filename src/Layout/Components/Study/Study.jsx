@@ -26,19 +26,15 @@ export default function Study() {
     getData(deckId)
      //runs after component mounted
     cards.map((card) => {
-      console.log("useEffect cards map card: ")
-      console.log(card)
-      card.checked = true
+      return card.checked = true
     })
 
     const timeoutId = setTimeout(() => {
-      console.log("labelRef: ");
-      console.log(labelRef);
       labelRef.current.click();//finds current (card) and "clicks" it so it floats above deck
     }, 1000)//trigger a click in 1 secs
 
     return () => clearTimeout(timeoutId)
-  }, [deckId])
+  }, [])
 
 
 

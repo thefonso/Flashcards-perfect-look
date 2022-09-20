@@ -14,7 +14,7 @@ function fade(){
         </li>
         {cards.map((card, index) =>
           <li className="lowercase" key={index}>
-            {(index == 0) ? (
+            {(index === 0) ? (
               <label id={`item-${index}`} ref={labelRef} htmlFor={`toggle-card-${index + 1}`} onClick={() => fade()}>
                 Begin
               </label>
