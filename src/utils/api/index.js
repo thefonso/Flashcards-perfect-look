@@ -3,8 +3,8 @@
  * The default values is overridden by the `API_BASE_URL` environment variable.
  */
 console.log("utils/api/index.js: ")
-console.log(process.env)
-const API_BASE_URL = process.env.VERCEL_URL || "http://localhost:8080";
+console.log(process.env.REACT_APP_VERCEL_URL)
+const API_BASE_URL = process.env.REACT_APP_VERCEL_URL || "http://localhost:8080";
 
 /**
  * Defines the default headers for these functions to work with `json-server`

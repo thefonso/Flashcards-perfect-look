@@ -34,7 +34,7 @@ export default function Study() {
     }, 1000)//trigger a click in 1 secs
 
     return () => clearTimeout(timeoutId)
-  }, [deckId,cards])
+  }, [deckId])
 
 
 
