@@ -1,7 +1,7 @@
 {
   "name": "Study-O-Matic",
   "version": "0.9.0",
-  "homepage": "https://studycards-ten.vercel.app",
+  "main": "server.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
