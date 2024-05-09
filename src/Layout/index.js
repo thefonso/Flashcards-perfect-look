@@ -41,7 +41,7 @@ function Layout() {
           <Route path="/decks/:deckId/cards/:cardId/edit">
             <EditCard />
           </Route>
-
+           {/*NOTE: why is this second "exact" here?*/}
           <Route exact={true} path="/decks/:deckId">
             <Deck />
           </Route>

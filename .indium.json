@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "Web project",
+      "type": "chrome",
+      "root": "src",
+      "host": "localhost",
+      "url": "http://localhost",
+      "port": 9222
+    }
+  ]
+}

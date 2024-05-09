@@ -40,6 +40,8 @@ export default function AddCard() {
   }
 
   const handleChange = ({ target }) => {
+    // NOTE: "...formData parses for the names of every form field"
+    // NOTE: "...[target.name]: target.value...will come from the "VALUE={front or back}" inside the form field in <FormCard>"
     setFormData({
       ...formData,
       [target.name]: target.value,
@@ -77,8 +79,8 @@ export default function AddCard() {
           <FormCard
             handleSubmit={handleSubmit}
             handleChange={handleChange}
-            front={formData.front}
-            back={formData.back}
+            valueFront={formData.front}
+            valueBack={formData.back}
             deckId={deckId}
             cancel={'Cancel'}
             submit={'Submit'}

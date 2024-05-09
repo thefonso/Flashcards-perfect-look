@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 export default function FormCard({
   handleSubmit,
   handleChange,
-  front,
-  back,
+  valueFront,
+  valueBack,
   deckId,
   cancel,
   submit,
+  value
 }) {
   return (
     <form onSubmit={handleSubmit}>
@@ -21,7 +22,7 @@ export default function FormCard({
           rows="3"
           placeholder="Front side of card"
           onChange={handleChange}
-          value={front}
+          value={valueFront}
           required
         ></textarea>
       </div>
@@ -34,7 +35,7 @@ export default function FormCard({
           rows="3"
           placeholder="Back side of card"
           onChange={handleChange}
-          value={back}
+          value={valueBack} //NOTE: see CONTROLLED form input notes in handleChange in AddCard / EditCard
           required
         ></textarea>
       </div>
